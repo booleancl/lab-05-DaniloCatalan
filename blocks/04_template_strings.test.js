@@ -9,15 +9,15 @@ describe('Access Levels', () => {
       welcomeText
     } = templateStrings()
 
-    const user = 'Buster'
+    const user = 'Danilo'
 
     expect(textWithUser).toEqual(`Hola ${user}`)
     
     const expectedText = `
-Estimado ${user}
-Tenemos el agrado de comunicarle que ha sido seleccionado
-para la beca
-saludos cordiales`
+      Estimado ${user}
+      Tenemos el agrado de comunicarle que ha sido seleccionado
+      para la beca
+      saludos cordiales`
 
     expect(welcomeText).toEqual(expectedText)
 

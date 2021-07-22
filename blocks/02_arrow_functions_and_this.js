@@ -12,14 +12,20 @@ function thisInDifferentContexts() {
   // ¿Será posible esto?
   // this = {}
 
-  this.customValue = false
-  
-  function normalFunction() {
+  this.customValue = true
+  // console.log(this)
+  function normalFunction(foo,arg) {
+    // console.log(foo,arg)
     return this.customValue
   }
+ //normalFunction.call({customValue:20},true,123)
+//  const newFunction = normalFunction.bind(this)
+//  console.log(newFunction())
 
   function ConstructorFunction() {
-    this.myProperty = 1
+    //console.log(this)
+
+    this.myProperty = 2
   }
 
   const normalAnonymousFunction = function() {
@@ -29,15 +35,17 @@ function thisInDifferentContexts() {
   const arrowFunction = () => {
     return(this.customValue)
   }
-
+  
   const objectWithMethods = {
-    methodNormalFunction: function() {
+    //customValue :30,
+    methodNormalFunction() {
       return(this.customValue)
     },
     methodArrowFunction: () => {
       return (this.customValue)
     }
   }
+  console.log(objectWithMethods.methodArrowFunction())
 
   /*
     🧪🧪🔬🔬 Vamos a experimentar 🧪🧪🔬🔬

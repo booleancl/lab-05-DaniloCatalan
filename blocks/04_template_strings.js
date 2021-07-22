@@ -1,14 +1,25 @@
 function templateStrings() {
   const baseText = 'Hola'
-  const user = 'Buster'
-
-  const welcomeText = '\nEstimado' + ' ' + usuario + '\n'
-    + 'Tenemos el agrado de comunicarle que ha sido seleccionado\n'
-    + 'para la beca '
-    + 'saludos cordiales'
+  const user = 'Danilo'
   
+  const getUser = () => user
+
+  const welcomeText = `
+      Estimado ${getUser()}
+      Tenemos el agrado de comunicarle que ha sido seleccionado
+      para la beca
+      saludos cordiales`
+      // const key="name"
+      // const separator ='-'
+      // const userDos = {
+      //   [`${key}${separator}`]: 'Danilo2'
+      // }
+      // userDos[key] = 'Danilo2'
+      // console.log(userDos[`${key}${separator}`])
+
+  // console.log(welcomeText)
   return {
-    textWithUser: baseText + ' ' + usuario,
+    textWithUser: `${baseText} ${user}`,
     welcomeText
   }
 }

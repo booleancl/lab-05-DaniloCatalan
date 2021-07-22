@@ -1,5 +1,5 @@
 function functionHoisting() {     
-  return someFunction
+  return someFunction()
 
   function someFunction(){
     return('Mira mamá! Ya llegué');
@@ -8,27 +8,30 @@ function functionHoisting() {
 
 function varHoisting(){
   var someVariable
-  someVariable = 'Si me usas antes de asignarme seré undefined'
+  //someVariable = 'Si me usas antes de asignarme seré undefined'
   
   return someVariable
+  someVariable = 'Si me usas antes de asignarme seré undefined'
 }
 
 function letHoisting(){
+  let someVariable 
+
   return someVariable
 
-  let someVariable 
   someVariable = 'Si me usas antes de dejaré la $#%$%&"#$'
 }
 
 function constHoisting(){
-  return [ someVariable, someFunction ]
-  
-  // const someVariable
   const someVariable = 'No se te ocurra inicializar una const sin asignar'
-
+  // const someVariable
+  // someVariable = "No se te ocurra inicializar una const sin asignar"
   const someFunction = function(){
     return "Hola desde una const"
   }
+
+  return [ someVariable, someFunction ]
+
 
 }
 
@@ -43,13 +46,10 @@ function blockScopeHoisting() {
 
   for(let index = 0; index < [1,2,3].length; index++) {
     //  Block Scope
-    console.log(index)
   }
-
-  console.log(index)
   
-  // var value = 0
-  // let value = 0
+  //var value = 0
+  let value = 0
   //const value = 0
   if (value === 0) {
     //  Block Scope
